@@ -4,6 +4,10 @@ load("@rules_proto//proto:defs.bzl", "proto_library")
 
 package(default_visibility = ["//src:__subpackages__"])
 
+exports_files([
+    "build_event_stream.proto",
+])
+
 filegroup(
     name = "srcs",
     srcs = glob(["**"]),
