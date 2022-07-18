@@ -1,3 +1,4 @@
+load("@com_google_protobuf//:protobuf.bzl", "py_proto_library")
 load("@rules_java//java:defs.bzl", "java_proto_library")
 load("//tools/build_rules:utilities.bzl", "java_library_srcs")
 load("@rules_proto//proto:defs.bzl", "proto_library")
@@ -32,4 +33,11 @@ proto_library(
         "@com_google_protobuf//:duration_proto",
         "@com_google_protobuf//:timestamp_proto",
     ],
+)
+
+py_proto_library(
+    name = "build_event_stream_py_proto",
+    srcs = ["build_event_stream.proto"],
+    default_runtime = "//third_party/protobuf:protobuf_python",
+    protoc = "//third_party/protobuf:protoc",
 )
