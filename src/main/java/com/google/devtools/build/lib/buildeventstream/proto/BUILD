@@ -40,4 +40,5 @@ py_proto_library(
     srcs = ["build_event_stream.proto"],
     default_runtime = "//third_party/protobuf:protobuf_python",
     protoc = "//third_party/protobuf:protoc",
+    visibility = ["//visibility:public"],
 )
